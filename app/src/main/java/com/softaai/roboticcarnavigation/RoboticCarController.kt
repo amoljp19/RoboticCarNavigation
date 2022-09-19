@@ -1,5 +1,6 @@
 package com.softaai.roboticcarnavigation
 
+import android.icu.text.Transliterator
 import android.os.Build.VERSION_CODES.N
 
 
@@ -41,5 +42,10 @@ object RoboticCarController {
         }
 
         println("after right spin ${roboticCar}")
+    }
+
+
+    fun move(initialPosition: Position){
+       //ToDo implementation remaining
     }
 }
