@@ -6,7 +6,7 @@ package com.softaai.roboticcarnavigation
  * softAai Apps.
  */
 
-data class RoboticCar(var x:Int, var y: Int, var direction: String){
+data class RoboticCar(var x:Int = 0, var y: Int = 0, var direction: String = "N"){
     override fun toString(): String {
         return "Car current position is ($x, $y) and facing towards $direction"
     }
