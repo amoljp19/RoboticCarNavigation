@@ -1,8 +1,5 @@
 package com.softaai.roboticcarnavigation
 
-import android.icu.text.Transliterator
-import android.os.Build.VERSION_CODES.N
-
 
 /**
  * Created by amoljp19 on 9/20/2022.
@@ -10,15 +7,15 @@ import android.os.Build.VERSION_CODES.N
  */
 object RoboticCarController {
 
-    fun proccess(commandString: String){
+    fun proccess(commandString: String) {
         //ToDo implementation remainging
     }
 
 
-    fun spinLeft(intialDirection:String){
+    fun spinLeft(initialDirection: String) {
         //  Left Spin Mapping is {N->E, E->S, S->W, W->N}
         val roboticCar = RoboticCar()
-        when (intialDirection){
+        when (initialDirection) {
             "N" -> roboticCar.direction = "E"
             "E" -> roboticCar.direction = "S"
             "S" -> roboticCar.direction = "W"
@@ -30,10 +27,10 @@ object RoboticCarController {
     }
 
 
-    fun spinRight(intialDirection:String){
+    fun spinRight(initialDirection: String) {
         //  Right Spin Mapping is {N->W, W->S, S->E, E->N}
         val roboticCar = RoboticCar()
-        when (intialDirection){
+        when (initialDirection) {
             "N" -> roboticCar.direction = "W"
             "E" -> roboticCar.direction = "N"
             "S" -> roboticCar.direction = "E"
@@ -45,7 +42,14 @@ object RoboticCarController {
     }
 
 
-    fun move(initialPosition: Position){
-       //ToDo implementation remaining
+    fun move(initialDirection: String) {
+        val roboticCar = RoboticCar()
+        when (initialDirection) {
+            "N" -> roboticCar.y += 1
+            "S" -> roboticCar.y -= 1
+            "W" -> roboticCar.x += 1
+            "E" -> roboticCar.x -= 1
+            else -> throw IllegalArgumentException("initialDirection value not as per four cardinal compass points{N, E, S, W}!")
+        }
     }
 }
