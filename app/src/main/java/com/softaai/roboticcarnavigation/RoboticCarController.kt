@@ -16,11 +16,21 @@ object RoboticCarController {
         //  Left Spin Mapping is {N->E, E->S, S->W, W->N}
         val roboticCar = RoboticCar()
         when (initialDirection) {
-            "N" -> roboticCar.direction = "E"
-            "E" -> roboticCar.direction = "S"
-            "S" -> roboticCar.direction = "W"
-            "W" -> roboticCar.direction = "N"
-            else -> throw IllegalArgumentException("initialDirection value not as per four cardinal compass points{N, E, S, W}!")
+            "N" -> {
+                roboticCar.facingDirection.direction = "E"
+            }
+            "E" -> {
+                roboticCar.facingDirection.direction = "S"
+            }
+            "S" -> {
+                roboticCar.facingDirection.direction = "W"
+            }
+            "W" -> {
+                roboticCar.facingDirection.direction = "N"
+            }
+            else -> {
+                throw IllegalArgumentException("initialDirection value not as per four cardinal compass points{N, E, S, W}!")
+            }
         }
 
         println("after left spin ${roboticCar}")
@@ -31,11 +41,21 @@ object RoboticCarController {
         //  Right Spin Mapping is {N->W, W->S, S->E, E->N}
         val roboticCar = RoboticCar()
         when (initialDirection) {
-            "N" -> roboticCar.direction = "W"
-            "E" -> roboticCar.direction = "N"
-            "S" -> roboticCar.direction = "E"
-            "W" -> roboticCar.direction = "S"
-            else -> throw IllegalArgumentException("initialDirection value not as per four cardinal compass points{N, E, S, W}!")
+            "N" -> {
+                roboticCar.facingDirection.direction = "W"
+            }
+            "E" -> {
+                roboticCar.facingDirection.direction = "N"
+            }
+            "S" -> {
+                roboticCar.facingDirection.direction = "E"
+            }
+            "W" -> {
+                roboticCar.facingDirection.direction = "S"
+            }
+            else -> {
+                throw IllegalArgumentException("initialDirection value not as per four cardinal compass points{N, E, S, W}!")
+            }
         }
 
         println("after right spin ${roboticCar}")
@@ -45,11 +65,27 @@ object RoboticCarController {
     fun move(initialDirection: String) {
         val roboticCar = RoboticCar()
         when (initialDirection) {
-            "N" -> roboticCar.y += 1
-            "S" -> roboticCar.y -= 1
-            "W" -> roboticCar.x += 1
-            "E" -> roboticCar.x -= 1
-            else -> throw IllegalArgumentException("initialDirection value not as per four cardinal compass points{N, E, S, W}!")
+            "N" -> {
+                roboticCar.position.y += 1
+                roboticCar.facingDirection.direction = "N"
+            }
+            "S" -> {
+                roboticCar.position.y -= 1
+                roboticCar.facingDirection.direction = "S"
+            }
+            "W" -> {
+                roboticCar.position.x += 1
+                roboticCar.facingDirection.direction = "W"
+            }
+            "E" -> {
+                roboticCar.position.x -= 1
+                roboticCar.facingDirection.direction = "E"
+            }
+            else -> {
+                throw IllegalArgumentException("initialDirection value not as per four cardinal compass points{N, E, S, W}!")
+            }
         }
+
+        println("Moved $roboticCar")
     }
 }

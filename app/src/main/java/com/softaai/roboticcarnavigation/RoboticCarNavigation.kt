@@ -14,7 +14,11 @@ fun main(){
 //
 //    RoboticCarController.spinLeft("W")
 
-    println("lets test right spin of robotic car ")
+//    println("lets test right spin of robotic car ")
+//
+//    RoboticCarController.spinRight("W")
 
-    RoboticCarController.spinRight("W")
+      println("lets test move functionality")
+
+      RoboticCarController.move("E")
 }
