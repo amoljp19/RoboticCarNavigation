@@ -10,7 +10,11 @@ package com.softaai.roboticcarnavigation
 fun main(){
     println("we will test robotic cars navigation soon...!!")
 
-    println("lets test left spin of robotic car ")
+//    println("lets test left spin of robotic car ")
+//
+//    RoboticCarController.spinLeft("W")
 
-    RoboticCarController.spinLeft("W")
+    println("lets test right spin of robotic car ")
+
+    RoboticCarController.spinRight("W")
 }

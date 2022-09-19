@@ -27,4 +27,19 @@ object RoboticCarController {
 
         println("after left spin ${roboticCar}")
     }
+
+
+    fun spinRight(intialDirection:String){
+        //  Right Spin Mapping is {N->W, W->S, S->E, E->N}
+        val roboticCar = RoboticCar()
+        when (intialDirection){
+            "N" -> roboticCar.direction = "W"
+            "E" -> roboticCar.direction = "N"
+            "S" -> roboticCar.direction = "E"
+            "W" -> roboticCar.direction = "S"
+            else -> throw IllegalArgumentException("initialDirection value not as per four cardinal compass points{N, E, S, W}!")
+        }
+
+        println("after right spin ${roboticCar}")
+    }
 }
