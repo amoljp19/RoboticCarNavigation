@@ -6,7 +6,10 @@ package com.softaai.roboticcarnavigation
  * softAai Apps.
  */
 
-data class RoboticCarLocation(var position: Position = Position(0,0), var facingDirection: FacingDirection = FacingDirection("N")){
+data class RoboticCarLocation(
+    var position: Position = Position(0, 0),
+    var facingDirection: FacingDirection = FacingDirection("N")
+) {
     override fun toString(): String {
         return "Robotic Car current location at $position and facing towards $facingDirection"
     }

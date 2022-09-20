@@ -1,24 +1,30 @@
 package com.softaai.roboticcarnavigation
 
-
 /**
  * Created by amoljp19 on 9/20/2022.
  * softAai Apps.
  */
 
 
-fun main(){
-    println("we will test robotic cars navigation soon...!!")
+fun main() {
 
-//    println("lets test left spin of robotic car ")
-//
-//    RoboticCarController.spinLeft("W")
+    println("Robotic Car Navigation Test")
 
-//    println("lets test right spin of robotic car ")
-//
-//    RoboticCarController.spinRight("W")
+    RoboticCarController.navigateCar(
+        RoboticCar(
+            RoboticCarLocation(
+                Position(1, 2),
+                FacingDirection("N")
+            )
+        ), "LMLMLMLMM"
+    )  // 1 3 N   if test pass
+    RoboticCarController.navigateCar(
+        RoboticCar(
+            RoboticCarLocation(
+                Position(3, 3),
+                FacingDirection("E")
+            )
+        ), "MMRMMRMRRM"
+    )      // 5 1 E  if test pass
 
-      println("lets test move functionality")
-
-      RoboticCarController.move("E")
 }

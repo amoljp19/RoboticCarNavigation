@@ -53,16 +53,16 @@ Assume that the square directly North from (x, y) is (x, y+1)
 // thats why to move forward we need to pass M containg string. OK
 // as car only moving forward using M but navigation means it will move in any directions, so given conditions are just only restrictions
 
-// ok if i consider that in mind "LM" --> from (0,0, N) to left move  means N to left is E
+// ok if i consider that in mind "LM" --> from (0,0, N) to left move  means N to left is W
 
 //  directions
 //      N
-//   E  +  W
+//   W  +  E
 //      S
 
 
-//  Left Spin Mapping is {N->E, E->S, S->W, W->N}
-//  Right Spin Mapping is {N->W, W->S, S->E, E->N}
+//  Left Spin Mapping is {N->W, E->N, S->E, W->S}
+//  Right Spin Mapping is {N->E, W->N, S->W, E->S}
 
 //  moving forwards towards north means y+1
 //  moving forwards towards west means  x+1
@@ -70,13 +70,5 @@ Assume that the square directly North from (x, y) is (x, y+1)
 //  moving forwards towards east means  x-1
 
 
-// UseCase1 - initial at (0,0, N)
-// controller sends string "MRMLR"
-// output will be -> car position ? lets calculate
-//  0, 1, N
-//  0, 1, W
-//  1, 1, W
-//  1, 1, N
-//  1, 1, W
-
-// car at position (1, 1) and facing towards West i.e (1, 1, W)  for "MRMLR" string command.
+// Initial usecase removed as I had wrong assumption in my mind regarding cardinal compass points
+// now its corrected,
